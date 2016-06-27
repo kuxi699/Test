@@ -12,6 +12,7 @@ namespace Prime
         {
             bool isPrime = true;
             List<int> Lista = new List<int>();
+            List<int> SemiPrimes = new List<int>();
             for (int i = 2; i <= M; i++)
             {
 
@@ -32,8 +33,21 @@ namespace Prime
                 
             }
             Console.WriteLine(string.Join(",", Lista));
-            
-            Console.Write(r);
+
+            for (int i = 0; i < Lista.Count; i++)
+            {
+                for (int j = 0; j < Lista.Count(); j++)
+                {
+                    var semiPrime = Lista[i] * Lista[j];
+                    if (semiPrime >= M)
+                    {
+                        break;
+                    }
+
+                    SemiPrimes.Add(semiPrime);
+                    Console.WriteLine(string.Join(",", SemiPrimes));
+                }
+            }
 
         }
 
