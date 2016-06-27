@@ -10,6 +10,7 @@ namespace Prime
     {
         static void Main(string[] args)
         {
+            test
         }
     }
 }
